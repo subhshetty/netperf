@@ -1,0 +1,25 @@
+Netperf Installation - Performance measurement
+
+# wget ftp://ftp.netperf.org/netperf/netperf-2.7.0.tar.bz2
+# tar xvf netperf-2.7.0.tar.bz2
+# cd netperf-2.7.0
+# ./configure
+# make
+# su
+# make install
+
+In the standard configuration, netserver would run under inetd; however, inetd is obsolete.  Many distros don't even include it by default.  Besides, you probably don't want to leave the benchmark server running all the time.
+
+Instead of configuring inetd, therefore, run netserver in standalone mode:
+
+# /usr/local/bin/netserver
+
+Testing
+
+# netperf
+
+from another server 
+
+# netperf -H <ip-address>,ipv4
+
+# netperf -H <ip-address>
